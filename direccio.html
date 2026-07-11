@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direcció escènica — Roger Casadellà</title>
+  <meta name="description" content="Direcció escènica per a cultura popular, itineraris teatralitzats, recreacions històriques i museus. Roger Casadellà, més de quinze anys dirigint.">
+  <meta name="robots" content="noindex">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blanc: #ffffff;
+      --fons: #f9f9f9;
+      --fons-sec: #f2f2f2;
+      --negre: #111111;
+      --gris-text: #444444;
+      --gris-suau: #888888;
+      --vermell: #e8294a;
+      --cian: #3ec6d4;
+      --lila: #8b45a8;
+      --taronja: #f0a020;
+      --verd: #5ab832;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--blanc);
+      color: var(--negre);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo-svg { height: 32px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--lila); }
+
+    header.pagina {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: var(--fons);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-suau);
+      margin-bottom: 0.5rem;
+    }
+
+    header.pagina h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    header.pagina h1 em { font-style: italic; font-weight: 400; }
+
+    .capçalera-intro {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--gris-text);
+      font-size: 1.02rem;
+    }
+
+    .linia-colors {
+      height: 3px;
+      background: linear-gradient(to right, var(--vermell) 20%, var(--cian) 40%, var(--lila) 60%, var(--taronja) 80%, var(--verd) 100%);
+    }
+
+    section { padding: 5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    .section-titol {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    /* ÀMBITS */
+    .ambits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .ambit-card {
+      background: var(--blanc);
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .ambit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+    }
+    .ambit-card:hover { background: var(--fons); }
+    .card-c1::before { background: var(--lila); }
+    .card-c2::before { background: var(--cian); }
+    .card-c3::before { background: var(--taronja); }
+    .card-c4::before { background: var(--verd); }
+
+    .ambit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+    .ambit-card p {
+      font-size: 0.88rem;
+      color: var(--gris-text);
+      line-height: 1.65;
+    }
+
+    /* PROJECTES */
+    #projectes { background: var(--fons); }
+
+    .projecte {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      align-items: baseline;
+    }
+    .projecte:last-child { border-bottom: none; }
+
+    .projecte .any {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gris-suau);
+    }
+    .projecte h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .projecte p {
+      font-size: 0.85rem;
+      color: var(--gris-text);
+    }
+
+    /* CONTACTE */
+    .desenllac {
+      background: var(--negre);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .desenllac .section-label { color: rgba(255,255,255,0.35); }
+    .desenllac h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1.2rem;
+    }
+    .desenllac p {
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .boto-cta {
+      display: inline-block;
+      background: var(--lila);
+      color: white;
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.15s;
+      margin: 0 0.4rem 0.8rem;
+    }
+    .boto-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .boto-sec {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: inherit; }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .projecte { grid-template-columns: 70px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" style="text-decoration:none;">
+    <img src="RogerCasadella_logo_color.sv.svg" alt="Roger Casadellà" class="nav-logo-svg">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inici</a></li>
+    <li><a href="trajectoria.html">Trajectòria</a></li>
+    <li><a href="index.html#contacte">Contacte</a></li>
+  </ul>
+</nav>
+
+<header class="pagina">
+  <p class="section-label">Direcció escènica</p>
+  <h1>Explicar una història<br><em>amb els cossos dels altres</em></h1>
+  <p class="capçalera-intro">Direcció escènica per a ajuntaments, museus, comissions de festa i companyies: cultura popular, itineraris teatralitzats, recreacions històriques i espectacles a mida del territori.</p>
+</header>
+<div class="linia-colors"></div>
+
+<!-- ÀMBITS -->
+<section>
+  <div class="container">
+    <p class="section-label">Què faig</p>
+    <h2 class="section-titol">Quatre àmbits de treball</h2>
+    <div class="ambits-grid">
+      <div class="ambit-card card-c1">
+        <h3>Cultura popular i festa</h3>
+        <p>Direcció escènica d'actes de festa major i cicle festiu: parlaments, balls parlats, cercaviles teatralitzades i cerimònies. La festa com a espectacle col·lectiu que dignifica la tradició.</p>
+      </div>
+      <div class="ambit-card card-c2">
+        <h3>Patrimoni i museus</h3>
+        <p>Itineraris teatralitzats, visites dramatitzades i recreacions històriques que converteixen el patrimoni en experiència viva, amb rigor documental i ofici escènic.</p>
+      </div>
+      <div class="ambit-card card-c3">
+        <h3>Companyies i lírica</h3>
+        <p>Direcció i adjuntia de direcció per a companyies professionals i amateurs: sarsuela, clown, teatre de text. Mirada externa que ordena i potencia el que el grup ja té.</p>
+      </div>
+      <div class="ambit-card card-c4">
+        <h3>Projectes comunitaris</h3>
+        <p>Muntatges amb grups amateurs, entitats i col·lectius: el teatre com a eina de cohesió, amb l'experiència de vint anys dirigint grups de totes les edats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTES -->
+<section id="projectes">
+  <div class="container">
+    <p class="section-label">Seleccio de projectes</p>
+    <h2 class="section-titol">Direccions destacades</h2>
+
+    <div class="projecte">
+      <div class="any">2026</div>
+      <div>
+        <h3>El Sant Cugat d'Antoni Campañà</h3>
+        <p>Visita teatralitzada. Producció artística de tot el projecte — Museu de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2025–26</div>
+      <div>
+        <h3>Sant Antoni Abat</h3>
+        <p>Direcció escènica — Comissió de Sant Antoni de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2021–26</div>
+      <div>
+        <h3>Ambaixadors Reials</h3>
+        <p>Direcció escènica — Ajuntament de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2021</div>
+      <div>
+        <h3>Cent anys del Celler</h3>
+        <p>Direcció dels itineraris teatralitzats — Museu de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2021</div>
+      <div>
+        <h3>Homenatge a l'alcalde Codó</h3>
+        <p>Direcció de la recreació històrica — Ajuntament de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2017</div>
+      <div>
+        <h3>Que arriba el tren!</h3>
+        <p>Direcció de la cercavila teatralitzada — Ajuntament de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2015</div>
+      <div>
+        <h3>El lladre del nas vermell</h3>
+        <p>Direcció. Espectacle de clown — Companyia Va de Nassoos</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2012–14</div>
+      <div>
+        <h3>Sarsuela: Entre Sarsueles, La tavernera del puerto, Cançó d'amor i de guerra</h3>
+        <p>Direcció escènica i adjuntia de direcció — Companyia + Sarsuela</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">des de 2010</div>
+      <div>
+        <h3>Ball de Velles</h3>
+        <p>Direcció escènica — Comissió de Carnestoltes de Sant Cugat</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTE -->
+<section class="desenllac">
+  <p class="section-label">Parlem-ne</p>
+  <h2>Tens un projecte per dirigir?</h2>
+  <p>Cada encàrrec comença amb una conversa: què voleu explicar, a qui i amb quins mitjans. A partir d'aquí, l'ofici.</p>
+  <a href="mailto:roger@metromatic.net" class="boto-cta">✉&nbsp; roger@metromatic.net</a>
+  <a href="trajectoria.html" class="boto-cta boto-sec">Conèixer la trajectòria</a>
+</section>
+
+<footer>
+  © 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a>
+</footer>
+
+<script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

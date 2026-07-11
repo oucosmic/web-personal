@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formació i teatre a l'aula — Roger Casadellà</title>
+  <meta name="description" content="Tallers de teatre, teatre a l'escola, formació de professorat i teatre i salut mental. Roger Casadellà, educador teatral amb més de vint anys d'ofici.">
+  <meta name="robots" content="noindex">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blanc: #ffffff;
+      --fons: #f9f9f9;
+      --fons-sec: #f2f2f2;
+      --negre: #111111;
+      --gris-text: #444444;
+      --gris-suau: #888888;
+      --vermell: #e8294a;
+      --cian: #3ec6d4;
+      --lila: #8b45a8;
+      --taronja: #f0a020;
+      --verd: #5ab832;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--blanc);
+      color: var(--negre);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo-svg { height: 32px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--verd); }
+
+    header.pagina {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: var(--fons);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-suau);
+      margin-bottom: 0.5rem;
+    }
+
+    header.pagina h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    header.pagina h1 em { font-style: italic; font-weight: 400; }
+
+    .capçalera-intro {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--gris-text);
+      font-size: 1.02rem;
+    }
+
+    .linia-colors {
+      height: 3px;
+      background: linear-gradient(to right, var(--vermell) 20%, var(--cian) 40%, var(--lila) 60%, var(--taronja) 80%, var(--verd) 100%);
+    }
+
+    section { padding: 5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    .section-titol {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    /* PROPOSTES */
+    .propostes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .proposta-card {
+      background: var(--blanc);
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .proposta-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+    }
+    .proposta-card:hover { background: var(--fons); }
+    .card-c1::before { background: var(--verd); }
+    .card-c2::before { background: var(--taronja); }
+    .card-c3::before { background: var(--cian); }
+    .card-c4::before { background: var(--vermell); }
+
+    .proposta-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .proposta-card .card-subtitol {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--gris-suau);
+      margin-bottom: 1rem;
+    }
+    .proposta-card p {
+      font-size: 0.88rem;
+      color: var(--gris-text);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      background: var(--fons-sec);
+      color: var(--gris-text);
+    }
+
+    /* EXPERIÈNCIA */
+    #experiencia { background: var(--fons); }
+
+    .exp {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      align-items: baseline;
+    }
+    .exp:last-child { border-bottom: none; }
+    .exp .any {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gris-suau);
+    }
+    .exp h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .exp p { font-size: 0.85rem; color: var(--gris-text); }
+
+    /* CONTACTE */
+    .desenllac {
+      background: var(--negre);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .desenllac .section-label { color: rgba(255,255,255,0.35); }
+    .desenllac h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1.2rem;
+    }
+    .desenllac p {
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .boto-cta {
+      display: inline-block;
+      background: var(--verd);
+      color: white;
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.15s;
+      margin: 0 0.4rem 0.8rem;
+    }
+    .boto-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .boto-sec {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+    }
+
+    footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: inherit; }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .exp { grid-template-columns: 90px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" style="text-decoration:none;">
+    <img src="RogerCasadella_logo_color.sv.svg" alt="Roger Casadellà" class="nav-logo-svg">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inici</a></li>
+    <li><a href="trajectoria.html">Trajectòria</a></li>
+    <li><a href="index.html#contacte">Contacte</a></li>
+  </ul>
+</nav>
+
+<header class="pagina">
+  <p class="section-label">Formació i teatre a l'aula</p>
+  <h1>L'aula és un escenari<br><em>on tothom té paper</em></h1>
+  <p class="capçalera-intro">Educador teatral amb més de vint anys d'ofici: tallers de teatre per a totes les edats, teatre a l'escola, formació de professorat i teatre com a eina de salut i cohesió.</p>
+</header>
+<div class="linia-colors"></div>
+
+<!-- PROPOSTES -->
+<section>
+  <div class="container">
+    <p class="section-label">Què ofereixo</p>
+    <h2 class="section-titol">Les propostes</h2>
+    <div class="propostes-grid">
+
+      <div class="proposta-card card-c1">
+        <h3>Tallers de teatre</h3>
+        <p class="card-subtitol">Infants, adolescents i adults</p>
+        <p>Cursos anuals de teatre amb muntatge final: tècnica, joc dramàtic i creació col·lectiva. L'experiència de dirigir els muntatges de cada curs des de 2001.</p>
+        <div class="tag-container">
+          <span class="tag">Curs anual</span>
+          <span class="tag">Totes les edats</span>
+        </div>
+      </div>
+
+      <div class="proposta-card card-c2">
+        <h3>Teatre a l'escola</h3>
+        <p class="card-subtitol">Sessions i projectes per a primària i secundària</p>
+        <p>Projectes com «Reinventem un conte»: el teatre com a eina per treballar la llengua, l'expressió i la cohesió del grup dins de l'horari lectiu.</p>
+        <div class="tag-container">
+          <span class="tag">Primària</span>
+          <span class="tag">ESO</span>
+          <span class="tag">Projecte a mida</span>
+        </div>
+      </div>
+
+      <div class="proposta-card card-c3">
+        <h3>Formació de professorat</h3>
+        <p class="card-subtitol">El teatre com a eina pedagògica</p>
+        <p>Cursos com «Com treballar el teatre a l'aula?»: recursos teatrals pràctics perquè els mestres els facin servir a la seva pròpia aula, sense necessitat d'experiència prèvia.</p>
+        <div class="tag-container">
+          <span class="tag">Mestres i educadors</span>
+          <span class="tag">Pràctic</span>
+        </div>
+      </div>
+
+      <div class="proposta-card card-c4">
+        <h3>Teatre i salut mental</h3>
+        <p class="card-subtitol">El teatre com a espai de benestar</p>
+        <p>Conducció de grups de teatre en l'àmbit de la salut mental des de 2017: un espai segur on el joc teatral treballa l'autoestima, el vincle i l'expressió.</p>
+        <div class="tag-container">
+          <span class="tag">Àmbit social</span>
+          <span class="tag">Des de 2017</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÈNCIA -->
+<section id="experiencia">
+  <div class="container">
+    <p class="section-label">On ho he fet</p>
+    <h2 class="section-titol">Experiència docent</h2>
+
+    <div class="exp">
+      <div class="any">des de 2001</div>
+      <div>
+        <h3>Tallers de Teatre Sílvia Servan — La Unió Santcugatenca</h3>
+        <p>Professor de nens, adolescents i adults, i director dels muntatges de cada curs. Coordinador dels tallers des de 2014.</p>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="any">des de 2018</div>
+      <div>
+        <h3>Escola Avenç, Sant Cugat</h3>
+        <p>Professor de teatre.</p>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="any">des de 2017</div>
+      <div>
+        <h3>Grup de Teatre de Salut Mental — Ateneu Santcugatenc</h3>
+        <p>Conducció del grup.</p>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="any">des de 2019</div>
+      <div>
+        <h3>«Reinventem un conte» — CEIP Turó de Can Mates</h3>
+        <p>Sessions de teatre per a alumnes de primària.</p>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="any">2021</div>
+      <div>
+        <h3>«Com treballar el teatre a l'aula?»</h3>
+        <p>Formació per al professorat d'educació física de les escoles de Sant Cugat.</p>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="any">2006–07</div>
+      <div>
+        <h3>Esbart Sant Cugat</h3>
+        <p>Sessions d'interpretació per al cos de dansa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTE -->
+<section class="desenllac">
+  <p class="section-label">Parlem-ne</p>
+  <h2>Un taller per al teu centre o entitat?</h2>
+  <p>Cada proposta s'adapta al grup, l'espai i l'objectiu. Escriu-me i en parlem.</p>
+  <a href="mailto:roger@metromatic.net" class="boto-cta">✉&nbsp; roger@metromatic.net</a>
+  <a href="trajectoria.html" class="boto-cta boto-sec">Conèixer la trajectòria</a>
+</section>
+
+<footer>
+  © 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a>
+</footer>
+
+<script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

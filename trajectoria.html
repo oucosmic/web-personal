@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trajectòria — Roger Casadellà</title>
+  <meta name="description" content="Més de vint anys de teatre: actor, director, educador teatral i gestor cultural. La trajectòria que hi ha darrere del narrador Roger Casadellà.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blanc: #ffffff;
+      --fons: #f9f9f9;
+      --fons-sec: #f2f2f2;
+      --negre: #111111;
+      --gris-text: #444444;
+      --gris-suau: #888888;
+      --vermell: #e8294a;
+      --cian: #3ec6d4;
+      --lila: #8b45a8;
+      --taronja: #f0a020;
+      --verd: #5ab832;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--blanc);
+      color: var(--negre);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo-svg { height: 32px; width: auto; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--vermell); }
+
+    /* CAPÇALERA */
+    header.pagina {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: var(--fons);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-suau);
+      margin-bottom: 0.5rem;
+    }
+
+    header.pagina h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    header.pagina h1 em { font-style: italic; font-weight: 400; }
+
+    .capçalera-intro {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--gris-text);
+      font-size: 1.02rem;
+    }
+
+    .linia-colors {
+      height: 3px;
+      background: linear-gradient(to right, var(--vermell) 20%, var(--cian) 40%, var(--lila) 60%, var(--taronja) 80%, var(--verd) 100%);
+    }
+
+    /* LÍNIA DE TEMPS */
+    .timeline {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 5rem; bottom: 5rem;
+      left: calc(2rem + 7px);
+      width: 2px;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .capitol {
+      position: relative;
+      padding-left: 3.2rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .capitol:last-child { margin-bottom: 0; }
+
+    .capitol::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--blanc);
+      border: 4px solid var(--negre);
+    }
+
+    .cap-c1::before { border-color: var(--vermell); }
+    .cap-c2::before { border-color: var(--cian); }
+    .cap-c3::before { border-color: var(--taronja); }
+    .cap-c4::before { border-color: var(--verd); }
+    .cap-c5::before { border-color: var(--lila); }
+    .cap-c6::before { border-color: var(--negre); }
+
+    .capitol .anys {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-suau);
+      margin-bottom: 0.3rem;
+    }
+
+    .capitol h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .capitol p {
+      color: var(--gris-text);
+      margin-bottom: 1rem;
+      max-width: 62ch;
+    }
+
+    .fites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .fita {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      background: var(--fons-sec);
+      color: var(--gris-text);
+    }
+
+    /* DESENLLAÇ */
+    .desenllac {
+      background: var(--negre);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .desenllac .section-label { color: rgba(255,255,255,0.35); }
+
+    .desenllac h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1.2rem;
+    }
+
+    .desenllac p {
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+    }
+
+    .boto-cta {
+      display: inline-block;
+      background: var(--vermell);
+      color: white;
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .boto-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    footer a { color: inherit; }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .timeline::before { left: calc(1.2rem + 7px); }
+      .timeline { padding: 3.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" style="text-decoration:none;">
+    <img src="RogerCasadella_logo_color.sv.svg" alt="Roger Casadellà" class="nav-logo-svg">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inici</a></li>
+    <li><a href="index.html#espectacles">Espectacles</a></li>
+    <li><a href="index.html#contacte">Contacte</a></li>
+  </ul>
+</nav>
+
+<!-- CAPÇALERA -->
+<header class="pagina">
+  <p class="section-label">Trajectòria</p>
+  <h1>Tots els camins porten<br><em>a un conte ben contat</em></h1>
+  <p class="capçalera-intro">Més de vint-i-cinc anys de teatre en totes les seves formes: actor, director, educador i gestor cultural. Cada etapa ha deixat una eina a la maleta del narrador.</p>
+</header>
+<div class="linia-colors"></div>
+
+<!-- LÍNIA DE TEMPS -->
+<div class="timeline">
+
+  <article class="capitol cap-c1">
+    <p class="anys">1994 — 2001 · L'arrel</p>
+    <h2>Aprendre a tenir un grup a les mans</h2>
+    <p>Tot comença a l'escoltisme: cap de l'Agrupament Escolta Berenguer el Gran de Sant Cugat, monitor i director de lleure, educador social al Centre Obert. Anys d'aprendre allò que cap escola de teatre ensenya: llegir un grup, guanyar-se l'atenció d'una colla de criatures i fer que una història valgui més que qualsevol crit.</p>
+    <div class="fites">
+      <span class="fita">Escoltisme</span>
+      <span class="fita">Educació social</span>
+      <span class="fita">Director de lleure</span>
+    </div>
+  </article>
+
+  <article class="capitol cap-c2">
+    <p class="anys">1998 — 2008 · L'ofici d'actor</p>
+    <h2>Formar-se en tots els llenguatges</h2>
+    <p>Interpretació amb Sílvia Servan i Marina Julià, clown amb Jesús Jara, Virginia Imaz i Koldobika G. Vio, commedia dell'arte, manipulació de titelles i objectes amb Irma Borges. I escenaris de tota mena: teatre de text, lectures dramatitzades, personatges de carrer, televisió a TV3 i curtmetratges de l'ESCAC com a actor principal.</p>
+    <div class="fites">
+      <span class="fita">Clown</span>
+      <span class="fita">Titelles i objectes</span>
+      <span class="fita">TV3</span>
+      <span class="fita">Curtmetratges</span>
+    </div>
+  </article>
+
+  <article class="capitol cap-c3">
+    <p class="anys">2001 — 2011 · La companyia</p>
+    <h2>Metromàtic Teatre: on es forja el narrador</h2>
+    <p>La companyia pròpia de teatre familiar. Amb «Contes pintats» arriben més de 400 funcions arreu de Catalunya; amb «Escala de grisos», coproduïda amb SOS Racisme, el teatre es posa al servei d'un missatge. Deu anys de furgoneta, muntatges i públics de tota mena que converteixen l'ofici d'explicar històries en una manera de viure.</p>
+    <div class="fites">
+      <span class="fita">400+ funcions</span>
+      <span class="fita">Teatre familiar</span>
+      <span class="fita">SOS Racisme</span>
+    </div>
+  </article>
+
+  <article class="capitol cap-c4">
+    <p class="anys">2001 — avui · L'aula</p>
+    <h2>Educador teatral</h2>
+    <p>Professor dels Tallers de Teatre Sílvia Servan de La Unió Santcugatenca des de 2001, amb infants, adolescents i adults, dirigint els muntatges de cada curs. Professor de teatre a l'Escola Avenç, conductor del grup de teatre de salut mental de l'Ateneu Santcugatenc i formador de professorat. L'aula és el laboratori on es prova tot: què funciona, què emociona, què fa riure.</p>
+    <div class="fites">
+      <span class="fita">Tallers Sílvia Servan</span>
+      <span class="fita">Escola Avenç</span>
+      <span class="fita">Teatre i salut mental</span>
+      <span class="fita">Formació de professorat</span>
+    </div>
+    <p style="margin-top:0.8rem;"><a href="formacio.html" style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--verd);text-decoration:none;">Veure les propostes de formació →</a></p>
+  </article>
+
+  <article class="capitol cap-c5">
+    <p class="anys">2006 — avui · La direcció</p>
+    <h2>Director d'escena</h2>
+    <p>Direcció escènica per a la cultura popular i el patrimoni: els Ambaixadors Reials i el Ball de Velles de Sant Cugat, recreacions històriques, itineraris teatralitzats per al Museu de Sant Cugat i produccions com la visita teatralitzada sobre el fotògraf Antoni Campañà. També sarsuela, clown i espectacles pirotècnics. Dirigir és explicar una història amb els cossos dels altres.</p>
+    <div class="fites">
+      <span class="fita">Cultura popular</span>
+      <span class="fita">Itineraris teatralitzats</span>
+      <span class="fita">Museus</span>
+      <span class="fita">Sarsuela</span>
+    </div>
+    <p style="margin-top:0.8rem;"><a href="direccio.html" style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--lila);text-decoration:none;">Veure els projectes de direcció →</a></p>
+  </article>
+
+  <article class="capitol cap-c6">
+    <p class="anys">2014 — avui · La gestió</p>
+    <h2>Gestor cultural</h2>
+    <p>Coordinador dels Tallers de Teatre Sílvia Servan, membre de l'equip de programació del Teatre La Unió i de la coordinació de les residències artístiques de la Unió Santcugatenca, i membre de la comissió artística de la Festa Major de Sant Cugat durant quatre edicions. Conèixer l'ofici des de l'altra banda de la taula: pressupostos, programació i públics.</p>
+    <div class="fites">
+      <span class="fita">Programació</span>
+      <span class="fita">Residències artístiques</span>
+      <span class="fita">Festa Major</span>
+    </div>
+  </article>
+
+</div>
+
+<!-- DESENLLAÇ -->
+<section class="desenllac">
+  <p class="section-label">I tot desemboca aquí</p>
+  <h2>El narrador</h2>
+  <p>Des de 2011, «Roger Casadellà, narrador»: sessions de contes que van més enllà de l'hora del conte, amb titelles, ombres, objectes i pintura en viu. Encàrrecs del Consorci de Biblioteques de Barcelona, el Museu de Sant Cugat, el PAME de Terrassa i una selecció a Món Llibre. L'educador sap escoltar el públic, l'actor sap habitar-lo, el director sap construir-lo i el gestor sap què necessita qui programa. El narrador ho fa servir tot.</p>
+  <a href="index.html#espectacles" class="boto-cta">Descobreix els espectacles</a>
+</section>
+
+<footer>
+  © 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a>
+</footer>
+
+<script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
