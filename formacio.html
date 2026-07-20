@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formació i teatre a l'aula — Roger Casadellà</title>
   <meta name="description" content="Tallers de teatre, teatre a l'escola, formació de professorat i teatre i salut mental. Roger Casadellà, educador teatral amb més de vint anys d'ofici.">
-  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Roger Casadellà">
+  <meta property="og:locale" content="ca_ES">
+  <meta property="og:title" content="Formació i teatre a l'aula — Roger Casadellà">
+  <meta property="og:description" content="Tallers de teatre, teatre a l'escola, formació de professorat i teatre i salut mental.">
+  <meta property="og:url" content="https://rogercasadella.metromatic.net/formacio.html">
+  <meta property="og:image" content="https://rogercasadella.metromatic.net/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
@@ -60,6 +74,28 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--verd); }
+
+    .nav-links li { position: relative; display: flex; align-items: center; height: 64px; }
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      list-style: none;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s;
+      text-align: center;
+    }
+    .nav-links li:hover .submenu,
+    .nav-links li:focus-within .submenu { opacity: 1; visibility: visible; }
+    .submenu li { height: auto; display: block; }
+    .submenu li a { display: block; padding: 0.55rem 1.2rem; }
 
     header.pagina {
       padding: 10rem 2rem 4rem;
@@ -237,10 +273,61 @@
     }
     footer a { color: inherit; }
 
+    /* BANNER FOTOGRÀFIC */
+    .banner-foto {
+      height: 66vh;
+      min-height: 380px;
+      /* 'contain' sobre negre: el fons de la foto ja és negre, així que les
+         bandes laterals no es noten i no es talla cap cap. */
+      background: #000 url('formacio_hero.jpg') center center / contain no-repeat;
+      position: relative;
+    }
+    .banner-peu {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: rgba(255,255,255,0.85);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    /* GALERIA */
+    #galeria { background: var(--blanc); padding-top: 4rem; }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .galeria-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .galeria-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .galeria-item:hover img { transform: scale(1.04); }
+    .galeria-item figcaption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.4rem 1rem 0.8rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.72));
+      color: white;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 700px) {
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       .exp { grid-template-columns: 90px 1fr; gap: 1rem; }
+      .banner-foto { height: 34vh; min-height: 200px; }
+      .galeria-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -252,7 +339,15 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Inici</a></li>
-    <li><a href="trajectoria.html">Trajectòria</a></li>
+    <li><a href="index.html#espectacles">Espectacles</a></li>
+    <li>
+      <a href="index.html#sobre">Qui soc ▾</a>
+      <ul class="submenu">
+        <li><a href="trajectoria.html">Trajectòria</a></li>
+        <li><a href="direccio.html">Direcció escènica</a></li>
+        <li><a href="formacio.html">Formació</a></li>
+      </ul>
+    </li>
     <li><a href="index.html#contacte">Contacte</a></li>
   </ul>
 </nav>
@@ -263,6 +358,11 @@
   <p class="capçalera-intro">Educador teatral amb més de vint anys d'ofici: tallers de teatre per a totes les edats, teatre a l'escola, formació de professorat i teatre com a eina de salut i cohesió.</p>
 </header>
 <div class="linia-colors"></div>
+
+<!-- BANNER -->
+<div class="banner-foto">
+  <p class="banner-peu">Mostra final dels Tallers de Teatre — grup de joves</p>
+</div>
 
 <!-- PROPOSTES -->
 <section>
@@ -363,6 +463,28 @@
         <h3>Esbart Sant Cugat</h3>
         <p>Sessions d'interpretació per al cos de dansa.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="container">
+    <p class="section-label">Com hi treballem</p>
+    <h2 class="section-titol">Del joc a l'escenari</h2>
+    <div class="galeria-grid">
+      <figure class="galeria-item">
+        <img src="formacio_grup.jpg" alt="Grup d'adults amb nassos de clown saludant al final d'una mostra" loading="lazy">
+        <figcaption>El muntatge final, on tot el curs pren sentit</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="formacio_assaig.jpg" alt="Assaig sobre l'escenari amb llum lateral" loading="lazy">
+        <figcaption>Assaig: el gruix de la feina passa aquí</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <img src="formacio_escola.jpg" alt="Alumnes asseguts a terra, d'esquena, mirant una actuació" loading="lazy">
+        <figcaption>Teatre a l'escola: mirar també és aprendre</figcaption>
+      </figure>
     </div>
   </div>
 </section>

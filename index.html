@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roger Casadellà — Contes i Teatre</title>
+  <meta name="description" content="Narrador de contes i home de teatre. Espectacles de narració oral per a totes les edats: festes majors, biblioteques, escoles i cicles culturals.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Roger Casadellà">
+  <meta property="og:locale" content="ca_ES">
+  <meta property="og:title" content="Roger Casadellà — Contes i Teatre">
+  <meta property="og:description" content="Narrador de contes i home de teatre. Espectacles de narració oral per a totes les edats.">
+  <meta property="og:url" content="https://rogercasadella.metromatic.net/">
+  <meta property="og:image" content="https://rogercasadella.metromatic.net/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
@@ -80,6 +96,28 @@
     }
 
     .nav-links a:hover { color: var(--accent-1); }
+
+    .nav-links li { position: relative; display: flex; align-items: center; height: 64px; }
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      list-style: none;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s;
+      text-align: center;
+    }
+    .nav-links li:hover .submenu,
+    .nav-links li:focus-within .submenu { opacity: 1; visibility: visible; }
+    .submenu li { height: auto; display: block; }
+    .submenu li a { display: block; padding: 0.55rem 1.2rem; }
 
     /* HERO */
     #inici {
@@ -469,9 +507,16 @@
     <img src="RogerCasadella_logo_color.sv.svg" alt="Roger Casadellà" class="nav-logo-svg">
   </a>
   <ul class="nav-links">
-    <li><a href="#sobre">Qui soc</a></li>
+    <li><a href="#inici">Inici</a></li>
     <li><a href="#espectacles">Espectacles</a></li>
-    <li><a href="trajectoria.html">Trajectòria</a></li>
+    <li>
+      <a href="#sobre">Qui soc ▾</a>
+      <ul class="submenu">
+        <li><a href="trajectoria.html">Trajectòria</a></li>
+        <li><a href="direccio.html">Direcció escènica</a></li>
+        <li><a href="formacio.html">Formació</a></li>
+      </ul>
+    </li>
     <li><a href="#contacte">Contacte</a></li>
   </ul>
 </nav>
@@ -700,12 +745,15 @@
         ◈&nbsp; @nascosmic
       </a>
     </div>
+    <p class="contacte-peu">
+      <a href="dossier_contes_25.pdf" target="_blank" rel="noopener" style="color:inherit;">↓ Descarrega el dossier d'espectacles (PDF)</a>
+    </p>
     <p class="contacte-peu">Roger Casadellà — Contes i Teatre · roger@metromatic.net</p>
   </div>
 </section>
 
 <footer>
-  © 2025 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener" style="color:inherit;">Comunicom</a>
+  © 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener" style="color:inherit;">Comunicom</a>
 </footer>
 
 <script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
