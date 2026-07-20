@@ -101,13 +101,12 @@
     .submenu li { height: auto; display: block; }
     .submenu li a { display: block; padding: 0.55rem 1.2rem; }
 
-    /* CAPÇALERA */
+    /* CAPÇALERA — mateix patró que direccio.html i formacio.html:
+       títol sobre blanc i, a sota, la franja de foto. */
     header.pagina {
-      padding: 12rem 2rem 6rem;
+      padding: 10rem 2rem 4rem;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
-                  url('roger_casadella_narrador_de_contes.jpg') center 30% / cover no-repeat;
-      color: white;
+      background: var(--fons);
     }
 
     .section-label {
@@ -118,8 +117,6 @@
       color: var(--gris-suau);
       margin-bottom: 0.5rem;
     }
-
-    header.pagina .section-label { color: rgba(255,255,255,0.5); }
 
     header.pagina h1 {
       font-family: 'Playfair Display', serif;
@@ -133,13 +130,35 @@
     .capçalera-intro {
       max-width: 56ch;
       margin: 0 auto;
-      color: rgba(255,255,255,0.78);
+      color: var(--gris-text);
       font-size: 1.02rem;
     }
 
     .linia-colors {
       height: 3px;
       background: linear-gradient(to right, var(--vermell) 20%, var(--cian) 40%, var(--lila) 60%, var(--taronja) 80%, var(--verd) 100%);
+    }
+
+    /* BANNER FOTOGRÀFIC — igual que a direccio.html i formacio.html */
+    .banner-foto {
+      height: 58vh;
+      min-height: 340px;
+      background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+                  url('trajectoria_hero.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+    .banner-peu {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: rgba(255,255,255,0.85);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .banner-foto { height: 40vh; min-height: 240px; }
     }
 
     /* LÍNIA DE TEMPS */
@@ -311,6 +330,11 @@
   <p class="capçalera-intro">Més de vint-i-cinc anys de teatre en totes les seves formes: actor, director, educador i gestor cultural. Cada etapa ha deixat una eina a la maleta del narrador.</p>
 </header>
 <div class="linia-colors"></div>
+
+<!-- BANNER -->
+<div class="banner-foto">
+  <p class="banner-peu">«El lladre del nas vermell» — companyia Va de Nassoos</p>
+</div>
 
 <!-- LÍNIA DE TEMPS -->
 <div class="timeline">
