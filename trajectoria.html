@@ -245,28 +245,26 @@
     }
 
     /* DESENLLAÇ */
+    /* FRANJA FINAL — idèntica a les 3 pàgines interiors.
+       L'únic que canvia és l'accent de color del botó principal:
+       Trajectòria vermell · Direcció lila · Formació verd. */
     .desenllac {
       background: var(--negre);
       color: white;
       text-align: center;
       padding: 5rem 2rem;
     }
-
     .desenllac .section-label { color: rgba(255,255,255,0.35); }
-
     .desenllac h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       margin-bottom: 1.2rem;
     }
-
     .desenllac p {
       max-width: 52ch;
       margin: 0 auto 2.5rem;
       color: rgba(255,255,255,0.6);
-      font-size: 1rem;
     }
-
     .boto-cta {
       display: inline-block;
       background: var(--vermell);
@@ -278,9 +276,14 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       transition: opacity 0.2s, transform 0.15s;
+      margin: 0 0.4rem 0.8rem;
     }
-
     .boto-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .boto-sec {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+    }
 
     /* PEU — idèntic a totes les pàgines */
     footer {
@@ -428,6 +431,7 @@
   <h2>El narrador</h2>
   <p>Des de 2011, «Roger Casadellà, narrador»: sessions de contes que van més enllà de l'hora del conte, amb titelles, ombres, objectes i pintura en viu. Encàrrecs del Consorci de Biblioteques de Barcelona, el Museu de Sant Cugat, el PAME de Terrassa i una selecció a Món Llibre. L'educador sap escoltar el públic, l'actor sap habitar-lo, el director sap construir-lo i el gestor sap què necessita qui programa. El narrador ho fa servir tot.</p>
   <a href="index.html#espectacles" class="boto-cta">Descobreix els espectacles</a>
+  <a href="mailto:roger@metromatic.net" class="boto-cta boto-sec">✉&nbsp; roger@metromatic.net</a>
 </section>
 
 <footer>
