@@ -263,15 +263,26 @@
       color: rgba(255,255,255,0.8);
     }
 
+    /* PEU — idèntic a totes les pàgines */
     footer {
       background: #0a0a0a;
       color: rgba(255,255,255,0.2);
       text-align: center;
-      padding: 1.5rem;
+      padding: 2.2rem 1.5rem 1.6rem;
       font-size: 0.75rem;
       letter-spacing: 0.05em;
     }
-    footer a { color: inherit; }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    .peu-contacte {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      line-height: 2;
+      margin-bottom: 0.8rem;
+    }
+    .peu-sep { opacity: 0.3; margin: 0 0.7rem; }
+    .peu-legal { color: rgba(255,255,255,0.2); }
 
     /* BANNER FOTOGRÀFIC */
     .banner-foto {
@@ -497,7 +508,10 @@
 </section>
 
 <footer>
-  © 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a>
+  <p class="peu-contacte">
+    <a href="mailto:roger@metromatic.net">roger@metromatic.net</a><span class="peu-sep">·</span><a href="tel:628796880">628 796 880</a><span class="peu-sep">·</span><a href="https://www.instagram.com/nascosmic" target="_blank" rel="noopener">@nascosmic</a>
+  </p>
+  <p class="peu-legal">© 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a></p>
 </footer>
 
 <script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
