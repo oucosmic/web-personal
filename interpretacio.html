@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interpretació — Roger Casadellà</title>
+  <meta name="description" content="Actor: teatre de text, clown, commedia, titelles i audiovisual. Roger Casadellà, més de vint-i-cinc anys posant el cos al servei del personatge.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Roger Casadellà">
+  <meta property="og:locale" content="ca_ES">
+  <meta property="og:title" content="Interpretació — Roger Casadellà">
+  <meta property="og:description" content="Actor: teatre de text, clown, commedia, titelles i audiovisual. Del clàssic al plató.">
+  <meta property="og:url" content="https://rogercasadella.metromatic.net/interpretacio.html">
+  <meta property="og:image" content="https://rogercasadella.metromatic.net/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blanc: #ffffff;
+      --fons: #f9f9f9;
+      --fons-sec: #f2f2f2;
+      --negre: #111111;
+      --gris-text: #444444;
+      --gris-suau: #888888;
+      --vermell: #e8294a;
+      --cian: #3ec6d4;
+      --lila: #8b45a8;
+      --taronja: #f0a020;
+      --verd: #5ab832;
+      /* Accent d'aquesta pàgina: el cian del logo és massa clar per a text
+         i botons (2:1 sobre blanc). Aquest cian pregon passa el contrast
+         (4,86:1). El cian brillant es reserva per als tocs decoratius. */
+      --cian-fosc: #0e7d8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--blanc);
+      color: var(--negre);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo-svg { height: 32px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cian-fosc); }
+
+    .nav-links li { position: relative; display: flex; align-items: center; height: 64px; }
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(0,0,0,0.07);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      list-style: none;
+      padding: 0.5rem 0;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s;
+      text-align: center;
+    }
+    .nav-links li:hover .submenu,
+    .nav-links li:focus-within .submenu { opacity: 1; visibility: visible; }
+    .submenu li { height: auto; display: block; }
+    .submenu li a { display: block; padding: 0.55rem 1.2rem; }
+
+    /* MENÚ MÒBIL — botó d'hamburguesa. Ocult per sobre de 700px. */
+    .nav-toggle { display: none; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      margin-right: -0.7rem;
+      cursor: pointer;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #111111;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    header.pagina {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      background: var(--fons);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-suau);
+      margin-bottom: 0.5rem;
+    }
+
+    header.pagina h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    header.pagina h1 em { font-style: italic; font-weight: 400; }
+
+    .capçalera-intro {
+      max-width: 56ch;
+      margin: 0 auto;
+      color: var(--gris-text);
+      font-size: 1.02rem;
+    }
+
+    .linia-colors {
+      height: 3px;
+      background: linear-gradient(to right, var(--vermell) 20%, var(--cian) 40%, var(--lila) 60%, var(--taronja) 80%, var(--verd) 100%);
+    }
+
+    section { padding: 5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    .section-titol {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    /* REGISTRES */
+    .ambits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .ambit-card {
+      background: var(--blanc);
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .ambit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+    }
+    .ambit-card:hover { background: var(--fons); }
+    .card-c1::before { background: var(--cian); }
+    .card-c2::before { background: var(--taronja); }
+    .card-c3::before { background: var(--verd); }
+    .card-c4::before { background: var(--vermell); }
+
+    .ambit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+    .ambit-card p {
+      font-size: 0.88rem;
+      color: var(--gris-text);
+      line-height: 1.65;
+    }
+
+    /* CRÈDITS */
+    #credits { background: var(--fons); }
+    .projecte {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      align-items: baseline;
+    }
+    .projecte:last-child { border-bottom: none; }
+    .projecte .any {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gris-suau);
+    }
+    .projecte h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .projecte p {
+      font-size: 0.85rem;
+      color: var(--gris-text);
+    }
+
+    /* FRANJA FINAL — mateixa que les altres interiors; accent cian pregon. */
+    .desenllac {
+      background: var(--negre);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .desenllac .section-label { color: rgba(255,255,255,0.35); }
+    .desenllac h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1.2rem;
+    }
+    .desenllac p {
+      max-width: 52ch;
+      margin: 0 auto 2.5rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .boto-cta {
+      display: inline-block;
+      background: var(--cian-fosc);
+      color: white;
+      padding: 0.9rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.15s;
+      margin: 0 0.4rem 0.8rem;
+    }
+    .boto-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .boto-sec {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* PEU — idèntic a totes les pàgines */
+    footer {
+      background: #0a0a0a;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      padding: 2.2rem 1.5rem 1.6rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+    .peu-contacte {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      line-height: 2;
+      margin-bottom: 0.8rem;
+    }
+    .peu-sep { opacity: 0.3; margin: 0 0.7rem; }
+    .peu-legal { color: rgba(255,255,255,0.2); }
+
+    /* BANNER FOTOGRÀFIC */
+    .banner-foto {
+      height: 58vh;
+      min-height: 340px;
+      background: linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+                  url('interpretacio_hero.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+    .banner-peu {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 2rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: rgba(255,255,255,0.85);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.5rem; }
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+        padding: 0.4rem 0 1rem;
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+        transform: translateY(-130%);
+        transition: transform 0.28s ease;
+      }
+      .nav-toggle:checked ~ .nav-links { transform: translateY(0); }
+      .nav-links li { height: auto; display: block; }
+      .nav-links a { display: block; padding: 0.85rem 1.6rem; font-size: 0.82rem; }
+      .nav-caret { display: none; }
+      .submenu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        min-width: 0;
+        text-align: left;
+      }
+      .submenu li a {
+        padding: 0.7rem 1.6rem 0.7rem 2.8rem;
+        font-size: 0.78rem;
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0.06em;
+      }
+      .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) { opacity: 0; }
+      .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .projecte { grid-template-columns: 70px 1fr; gap: 1rem; }
+      .banner-foto { height: 40vh; min-height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" style="text-decoration:none;">
+    <img src="RogerCasadella_logo_color.sv.svg" alt="Roger Casadellà" class="nav-logo-svg">
+  </a>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-hamburger" aria-label="Obrir i tancar el menú"><span></span><span></span><span></span></label>
+  <ul class="nav-links">
+    <li><a href="index.html">Inici</a></li>
+    <li><a href="index.html#espectacles">Espectacles</a></li>
+    <li>
+      <a href="index.html#sobre">Qui soc <span class="nav-caret">▾</span></a>
+      <ul class="submenu">
+        <li><a href="trajectoria.html">Trajectòria</a></li>
+        <li><a href="interpretacio.html">Interpretació</a></li>
+        <li><a href="direccio.html">Direcció escènica</a></li>
+        <li><a href="formacio.html">Formació</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#contacte">Contacte</a></li>
+  </ul>
+</nav>
+
+<header class="pagina">
+  <p class="section-label">Interpretació</p>
+  <h1>Ser un altre<br><em>durant una estona</em></h1>
+  <p class="capçalera-intro">Actor format en interpretació, clown, commedia i manipulació. Més de vint-i-cinc anys posant el cos al servei del personatge, dalt de l'escenari i davant la càmera.</p>
+</header>
+<div class="linia-colors"></div>
+
+<!-- BANNER — pendent d'una foto d'actuació.
+     Per activar-lo: desa una foto a la carpeta com a `interpretacio_hero.jpg`
+     (un pla d'escena de teatre, un fotograma de TV o de curt) i treu les
+     marques de comentari d'aquestes tres línies.
+<div class="banner-foto">
+  <p class="banner-peu">PEU DE FOTO PENDENT</p>
+</div>
+-->
+
+<!-- REGISTRES -->
+<section>
+  <div class="container">
+    <p class="section-label">Què faig</p>
+    <h2 class="section-titol">Quatre registres</h2>
+    <div class="ambits-grid">
+      <div class="ambit-card card-c1">
+        <h3>Teatre de text</h3>
+        <p>Del clàssic al contemporani: Rusiñol, Feydeau, lectures dramatitzades i microteatre. La paraula dita amb precisió, sola o en repartiment.</p>
+      </div>
+      <div class="ambit-card card-c2">
+        <h3>Clown i gest</h3>
+        <p>Formació en clown amb Jesús Jara, Virginia Imaz i Koldobika G. Vio, i en commedia dell'arte. El cos i el nas com a eina per fer riure i commoure.</p>
+      </div>
+      <div class="ambit-card card-c3">
+        <h3>Titelles i objectes</h3>
+        <p>Manipulació de titelles i objectes amb Irma Borges. Anys de teatre familiar donant vida a la matèria, amb Metromàtic Teatre i La Muscària.</p>
+      </div>
+      <div class="ambit-card card-c4">
+        <h3>Davant la càmera</h3>
+        <p>Personatges a TV3 —«300», «El cor de la ciutat», «Porca misèria»— i actor principal en curtmetratges de l'ESCAC.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRÈDITS -->
+<section id="credits">
+  <div class="container">
+    <p class="section-label">Selecció de crèdits</p>
+    <h2 class="section-titol">Sobre l'escenari i davant la càmera</h2>
+
+    <div class="projecte">
+      <div class="any">2023</div>
+      <div>
+        <h3>Qui té por del públic</h3>
+        <p>Companyia Sílvia Servan — 30è aniversari del Teatre-Auditori de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2018</div>
+      <div>
+        <h3>Gioconda, de Gerald-Patrick Fannon</h3>
+        <p>Microteatre — 25è aniversari del Teatre-Auditori de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2014</div>
+      <div>
+        <h3>«300»</h3>
+        <p>Personatges — TV3</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2012</div>
+      <div>
+        <h3>Cançó d'amor i de guerra</h3>
+        <p>Personatge de repartiment — Companyia + Sarsuela</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2010</div>
+      <div>
+        <h3>Don Juan Tenorio</h3>
+        <p>Lectura dramatitzada, direcció de Carles Canut — Auditori de Sant Cugat</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2009</div>
+      <div>
+        <h3>Malabarista de les paraules</h3>
+        <p>Monòleg escrit per Dídac Micaló</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2008</div>
+      <div>
+        <h3>La fera ferotja · Platonades</h3>
+        <p>Metromàtic Teatre i L'Ou Còsmic — Direcció de Sílvia Servan</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2007</div>
+      <div>
+        <h3>La màscara (Feydeau) · L'Heroe (Rusiñol)</h3>
+        <p>tTeatre — Direcció de Dolors Vilarassau</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2007</div>
+      <div>
+        <h3>El cor de la ciutat · Porca misèria</h3>
+        <p>Intervencions — TV3</p>
+      </div>
+    </div>
+    <div class="projecte">
+      <div class="any">2005</div>
+      <div>
+        <h3>Captura't · La insoportable gravedad del ser</h3>
+        <p>Actor principal — Curtmetratges de l'ESCAC, direcció de Pau Soteras</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTE -->
+<section class="desenllac">
+  <p class="section-label">Parlem-ne</p>
+  <h2>Busques un intèrpret?</h2>
+  <p>De la paraula dita al clown, del titella al plató. Si tens un paper o un projecte al cap, escriu-me i en parlem.</p>
+  <a href="mailto:roger@metromatic.net" class="boto-cta">✉&nbsp; roger@metromatic.net</a>
+  <a href="trajectoria.html" class="boto-cta boto-sec">Conèixer la trajectòria</a>
+</section>
+
+<footer>
+  <p class="peu-contacte">
+    <a href="mailto:roger@metromatic.net">roger@metromatic.net</a><span class="peu-sep">·</span><a href="tel:628796880">628 796 880</a><span class="peu-sep">·</span><a href="https://www.instagram.com/nascosmic" target="_blank" rel="noopener">@nascosmic</a>
+  </p>
+  <p class="peu-legal">© 2026 Roger Casadellà · Tots els drets reservats · Logo: <a href="https://comunicom.es/" target="_blank" rel="noopener">Comunicom</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('nav-toggle').checked = false;
+    });
+  });
+</script>
+<script data-goatcounter="https://metromatic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
