@@ -2,22 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rogercasadella.metromatic.net/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rogercasadella.metromatic.net/trajectoria.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rogercasadella.metromatic.net/interpretacio.html</loc>
+    <lastmod>2026-07-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rogercasadella.metromatic.net/direccio.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rogercasadella.metromatic.net/formacio.html</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
