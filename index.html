@@ -421,6 +421,22 @@
 
     .detalls-llista strong { color: var(--negre); font-weight: 700; }
 
+    /* VÍDEO */
+    #video .container { max-width: 880px; }
+    #video { background: var(--negre); color: #fff; padding: 5rem 2rem; }
+    #video .section-label { color: #9a9a9a; }
+    #video .section-titol { color: #fff; margin-bottom: 1rem; }
+    
+    .video-marc { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; border-bottom: 4px solid var(--cian); }
+    .video-marc img, .video-marc iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+    .video-play { position: absolute; inset: 0; width: 100%; height: 100%; background: none; border: 0; cursor: pointer; padding: 0; }
+    .video-play img { transition: transform .5s ease, filter .3s; filter: brightness(.85); }
+    .video-play:hover img { transform: scale(1.03); filter: brightness(1); }
+    .video-play .boto { position: absolute; right: 22px; bottom: 22px; width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,.95); box-shadow: 0 10px 30px rgba(0,0,0,.4); transition: transform .2s; }
+    .video-play .boto::after { content: ""; position: absolute; left: 29px; top: 22px; border-style: solid; border-width: 14px 0 14px 22px; border-color: transparent transparent transparent var(--vermell); }
+    .video-play:hover .boto { transform: scale(1.08); }
+    @media (max-width: 800px) { .video-play .boto { right: 12px; bottom: 12px; width: 52px; height: 52px; } .video-play .boto::after { left: 21px; top: 16px; border-width: 10px 0 10px 16px; } }
+
     /* GALERIA */
     #galeria {
       background: var(--negre);
@@ -797,6 +813,21 @@
   </div>
 </section>
 
+<!-- VÍDEO -->
+<section id="video">
+  <div class="container">
+    <p class="section-label">En escena</p>
+    <h2 class="section-titol">Així explico un conte</h2>
+    <div class="video-marc">
+        <button class="video-play" type="button" aria-label="Reprodueix el vídeo de Les golfes"
+          onclick="this.outerHTML='&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/103gGmZky8Y?autoplay=1&amp;rel=0&quot; title=&quot;Les golfes — Roger Casadellà&quot; allow=&quot;autoplay; encrypted-media; picture-in-picture; fullscreen&quot; allowfullscreen&gt;&lt;/iframe&gt;'">
+          <img src="les_golfes_video.jpg" alt="Les golfes — Roger Casadellà explicant contes amb objectes" loading="lazy">
+          <span class="boto"></span>
+        </button>
+      </div>
+  </div>
+</section>
+
 <!-- GALERIA -->
 <section id="galeria">
   <div class="galeria-strip">
@@ -826,7 +857,7 @@
       </a>
     </div>
     <p class="contacte-peu">
-      <a href="dossier_contes_25.pdf" target="_blank" rel="noopener" style="color:inherit;">↓ Descarrega el dossier d'espectacles (PDF)</a>
+      <a href="Roger_Casadella_Dossier_Contes_2026.pdf" target="_blank" rel="noopener" style="color:inherit;">↓ Descarrega el dossier d'espectacles (PDF)</a>
     </p>
   </div>
 </section>
